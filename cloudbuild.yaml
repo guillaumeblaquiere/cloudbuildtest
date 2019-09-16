@@ -7,4 +7,4 @@ steps:
       - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}'
 substitutions:
   _ZONE: "zone"
-  _CLUSTER_NAME: "name"
+  '_CLUSTER_NAME: "name"'
