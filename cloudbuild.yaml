@@ -4,7 +4,7 @@ steps:
     args: ['-c', 'printenv | grep CLOUDSDK']
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
-      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}'
+      - CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}
 substitutions:
   _ZONE: "zone"
-  '_CLUSTER_NAME: "name"'
+  _CLUSTER_NAME: "name"
