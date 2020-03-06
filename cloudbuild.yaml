@@ -4,6 +4,8 @@ steps:
   args:
     - -c
     - |
+        git clone --branch $BRANCH_NAME https://github.com/guillaumeblaquiere/cloudbuildtest.git /tmp/repo ;
+        mv /tmp/repo/.git .
         ls -la
         git diff --name-only --diff-filter=AMDR @~..@ | grep "/" | cut -d"/" -f1 | uniq > /workspace/diff
         cat /workspace/diff
