@@ -4,10 +4,12 @@ steps:
   args:
     - -c
     - |
-      git version > /workspace/files.txt
-- name: 'gcr.io/cloud-builders/git'
+        git diff --name-only --diff-filter=AMDR @~..@ | grep "/" | cut -d"/" -f1 | uniq > /workspace/diff
+    - name: 'python:3.7'
   entrypoint: /bin/bash
   args: 
     - -c
     - |
-      echo "File contents " $(cat /workspace/files.txt)
+       for i in $$(cat /workspace/diff); do 
+       echo $$i
+       done
